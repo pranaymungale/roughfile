@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  /////
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+///
+
+
+    GENDER:
+<input type="radio" name="gender">MALE
+<input type="radio" name="gender">FEMALE
+<br><br>
+<input type="submit" name="submit">
+    /////////
+    $servername="localhost";
+      $username="root";
+      $password="";
+      $database="opers";
+
+      $conn = new mysqli($servername, $username, $password, $database);
+      
+if($conn->connect_error){
+    die("connection failed".$conn->connect_error );
+}
+echo  ("connection successful");
+echo "<br>";
+
+//$sql="INSERT INTO `student` (`name`, `last name`, `age`, `email`) VALUES ('branad', 'sharma', '84', 'munglepanugmail.com')";
+//$sql="INSERT INTO `student` (`name`, `last name`, `age`, `email`) VALUES ('sunny', 'soni', '64', 'devil@gmail.com')";
+//$sql="INSERT INTO `student` (`name`, `last name`, `age`, `email`) VALUES ('rohit', 'wankede', '69', 'munglepanugmail.com')";
+//$sql = "SELECT * FROM `student` ORDER BY name DESC";
+//$sql = "DELETE FROM student WHERE age=64";
+//$sql = "DELETE FROM student WHERE age=69";
+//$result = mysqli_query($conn, $sql);
+$sql= "UPDATE student SET name='ronny' WHERE age=84";
+
+if($conn->query($sql) === TRUE){
+    echo "Deleted successfully";
+}else{
+    echo "error deleting table".$conn->error;
+}
+
+
+
+
+
+
+
+/*if ($result->num_rows > 0) {
+    while($row=mysqli_fetch_assoc($result)){
+echo "Name: ".$row["name"]. "last name: ".$row["last name"]. "age: ".$row["age"]. " email: ".$row["email"]. "<br>";
+   }
+}
+else{
+    echo "no results";
+}*/
+     $conn->close();  
+    //////
+    trait Initia {
+        public function apes() {
+            echo "hello world1!";
+        }
+      }
+      trait Multia{
+        public function opes(){
+            echo "Hello Theree@";
+        }
+      }
+      class Usee {
+        use Initia;
+      }
+   class Today{
+    use Initia , Multia;
+   }
+$abc = new Usee();
+echo $abc->apes();
+echo "<br>";
+$bacc = new Today();
+echo $bacc->opes();
+
+    //////
+    interface Working{
+        public function opera();
+ }
+     class Rob implements Working{
+        public function opera(){
+            echo "hello boy!";
+        }
+     }
+     class Term implements Working{
+        public function opera(){
+echo "hello girl@";
+        }
+ }
+ class Equal implements Working{
+    public function opera(){
+echo "hello Everyone%";
+    }
+}
+
+$cdn = new Term(); 
+$part= new Equal();
+$abc = new Rob();
+$working= array($cdn,$part,$abc);
+
+foreach($working as $work){
+    echo $work->opera();
+    echo "<br>";
+}
+
+    /////
+    <?php
+    abstract class Car {
+      public $name;
+      public function __construct($name) {
+        $this->name = $name;
+      }
+      abstract public function intro() : string; 
+    }
+    
+    // Child classes
+    class Audi extends Car {
+      public function intro() : string {
+        return "Choose German quality! I'm an $this->name!"; 
+      }
+    }
+    
+    class Volvo extends Car {
+      public function intro() : string {
+        return "Proud to be Swedish! I'm a $this->name!"; 
+      }
+    }
+    
+    class Citroen extends Car {
+      public function intro() : string {
+        return "French extravagance! I'm a $this->name!"; 
+      }
+    }
+     
+     $audi = new Audi("panu");
+     echo $audi->intro();
+     echo "<br>";
+     $volvo = new Volvo("Mungale");
+     echo $volvo->intro();
+     echo "<br>";
+     $citro = new Citroen("The Great");
+     echo $citro->intro();
+
+    /////
+    class Rous{
+        const WELCOME="Hello Boyjhgjh";
+        public function goodbye(){
+        
+        echo self::WELCOME;
+        }
+      }
+      $rous = new Rous();
+       $rous->goodbye();
+    ///
+    <?php/*
+    class Fruit {
+
+      public $name;
+      public $color;
+
+      function __construct($name,$color){
+          $this->name= $name;
+          $this->color= $color;
+      }
+       function next() {
+          echo "name of car is {$this->name} color of car is {$this->color}";
+          }
+  }
+      class Work extends Fruit{
+          public $price;
+          function __construct($name,$color,$price){
+              $this->name= $name;
+              $this->color= $color;
+              $this->price=$price;
+          }
+          public function next(){
+              echo "we have a car name of car is {$this->name} color of car is {$this->color} price is {$this->price}";
+              
+          }
+      }
+      $abc = new Work("Audi","Red",6878);
+      $abc->next();
+    ////
+    function divide($ab,$cd){
+        if($cd==0){
+         throw new Exception("New Error",1);
+        }
+             return $ab/$cd;
+ 
+        }
+        try{
+         echo divide(5,0);
+        }
+        catch(Exception $a) {
+          $code = $a->getCode();
+          $message = $a->getMessage();
+          $file = $a->getFile();
+          $line = $a->getLine();
+          echo "Exception thrown in $file $line code[$code] $message";
+        }
+    //////
+    function my_callback($item){
+        return strlen($item);
+    }
+    $abc=["flower","water","birds","watermrelon"];
+    $lann = array_map("my_callback" , $abc);
+    print_r($lann);
+    //////
+    <h1>hello akash</h1>
+    <style>
+        table,td,th {
+            border:1px solid black;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th,td{
+            background-color: #96D4D4;
+            padding: 5px;
+        }
+    </style>
+    <body>
+<h1 style="color:brown"> Table Creation</h1>
+<table style="width:30%">
+    <tr>
+    <th>First</th>
+    <th>Second</th>
+    <th>Third</th>
+</tr>
+<tr>
+    <td>Volvo</td>
+    <td>BMW</td>
+    <td>Audi</td>
+</tr>
+<tr>
+    <td>Maruti</td>
+    <td>Fiat</td>
+    <td>Tata</td>
+</tr>
+</table>
+
+    ///
+    <form action="menu.php" method="post" enctype="multipart/form-data">
+        <input type="file" value="upload image" id="image to upload"><br><br>
+        <input type="submit" value="upload image" name="submit">
+        </form>
+        <?php
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        if(isset($_POST["submit"])) {
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if($check !== false) {
+              echo "File is an image - " . $check["mime"] . ".";
+              $uploadOk = 1;
+            } else {
+              echo "File is not an image.";
+              $uploadOk = 0;
+            }
+          }
+        
+   ///
+    <div class = "menu">
+        <?php
+        include 'menu.php';
+        ?>
+        </div>
+        <h1> PHP practice examples </h1>
+        <p>Your data is :</p>
+
+    ///
+    $startdate=strtotime("sunday");
+$enddate=strtotime("+7 months",$startdate);
+while($startdate < $enddate){
+    echo date("M d", $startdate)."<br>";
+    $startdate=strtotime("+1 months",$startdate);
+}
+////
+
+    <?php/*
+ define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+$namerr = $emailrr = $genderrr = $commentrr = $websiterr = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (empty($_POST["name"])) {
+      $namerr = "Name is required";
+    } else {
+        $name = test_input($_POST["name"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+          $nameErr = "Only letters and white space allowed";
+        }
+      }
+    
+    if (empty($_POST["email"])) {
+      $emailrr = "Email is required";
+    } else {
+      $email = test_input($_POST["email"]);
+      if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $emailrr = "enter valid email address";
+      }
+
+    }
+      
+    if (empty($_POST["website"])) {
+      $website = "";
+    } else {
+      $website = test_input($_POST["website"]);
+      if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+        $websiterr = "Enter valid url";
+      }
+
+    }
+  
+    if (empty($_POST["comment"])) {
+      $comment = "";
+    } else {
+      $comment = test_input($_POST["comment"]);
+    }
+  
+    if (empty($_POST["gender"])) {
+      $genderErr = "Gender is required";
+    } else {
+      $gender = test_input($_POST["gender"]);
+    }
+  }
+function test_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+?>
+
+<h2>PHP Form Validation Example</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  Name: <input type="text" name="name">
+  <span class="error">*<?php echo $namerr; ?></span>
+  <br><br>
+  E-mail: <input type="text" name="email">
+  <span class="error">*<?php echo $emailrr; ?></span>
+  <br><br>
+  Website: <input type="text" name="website">
+  <span class="error"><?php echo $websiterr; ?></span>
+  <br><br>
+  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+  <span class="error">*<?php echo $commentrr; ?></span>
+  <br><br>
+  Gender:
+  <input type="radio" name="gender" <?php if(isset($gender) && $gender=="female") echo"checked"; ?>
+  value="female">Female
+  <input type="radio" name="gender" <?php if(isset($gender) && $gender=="male") echo"checked"; ?> 
+  value="male">Male
+  <input type="radio" name="gender" <?php if(isset($gender) && $gender=="other") echo"checked"; ?>
+  value="other">Other
+  <span class="error">*<?php echo $genderrr; ?></span>
+  <br><br>
+  <input type="submit" name="submit" value="Submit">  
+</form>
+
+<?php
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $website;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+$fname = $mail = $web = $message = $gend="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+
+
+
+
+
+?>
+
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+   Name: <input type="text" name="fname" required><br><br>
+   E-mail: <input type="text" name="mail" required><br><br>
+   Website: <input type="url" name="web"><br><br>
+  Comment: <textarea name="message" rows="5" cols="30">Hello There!</textarea><br><br>
+  Gender: <input type="radio" name="gend" value="male" >
+  <input type="radio" name="gend" value="fmale" >
+  <input type="radio" name="gend" value="other" ><br><br>
+  <input type="submit" value="SUBMIT">
+</form>
+<h2>Your Input :</h2>
+<?php 
+echo $fname; 
+echo "<br>";
+echo $mail;
+echo "<br>";
+echo $web;
+echo "<br>";
+echo $message;
+echo "<br>";
+echo $gend;
+
+
+
+
+
+?><br>
+
+
+
+
+</html>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+
+*/
+/*First Name:<input type="text" name="fname" value="panu"><br>
+    Last Name:<input type="text" name="lname" value="mungle"><br>
+    <input type="submit" value="SUBMIT">
+ 
+    Your first name is<?php
+    echo $_POST["fname"];
+    ?><br>
+
+    Your Last name is<?php 
+    echo $_POST["lname"];
+    ?>
+<label for="age">Enter Age :</label><br>
+<input type="number" id="age" name="Age" step="3"><br>
+<input type="image" src="img_submit.gif" alt="submit" width="46" height="44">
+
+
+
+<fieldset>
+        <legend>Field:</legend>
+        <label for="fname">First Name</label><br>
+<input type="text" id="fname" name="name1" value="panu"><br>
+<label for="lname">Password</label><br>
+<input type="password" id="lname" name="Password" value="mungale"><br>
+<input type="submit" value="submit">
+
+<input list="mobiles">
+<datalist id="mobiles">
+    <option value="htc">HTC</option>
+    <option value="nokia">NOKIA</option>
+    <option value="mi">SHAOMI</option>
+    <option value="vivo">VIVO</option>
+</datalist>
+<input type="submit">
+<input type="reset">
+
+<input type="checkbox" id="fname" name="name1" value="panu">
+<label for="fname">First Name</label><br>
+<input type="checkbox" id="lname" name="name1" value="mungale">
+<label for="lname">Last Name</label><br>
+<input type="submit" value="submit">
+
+<label for="fname">Choose Your Mobile Brand</label>
+<select id="fname" name="fname">
+    
+    <option value="htc">HTC</option>
+    <option value="nokia">NOKIA</option>
+    <option value="mi">SHAOMI</option>
+    <option value="vivo">VIVO</option>
+</select><br>
+<button type="button" onclick="alert('Hello Boy!')">Click Here</button>
+
+<form action="Hello.php" method="POST">
+NAME:<input type="text" name="name"><br>
+E-mail:<input type="text" name="email"><br>
+<input type="Submit">
+</form>
+<html>
+<body>
+Hello
+<?php
+echo $_POST["name"];
+?><br>
+Your address is
+<?php 
+echo $_POST["email"];
+?>
+</html>
+</body>
+
+$t = 56;
+$h = 67;
+$abc = "Welcome";
+echo "Hello World $abc";
+echo $t + $h;
+echo "<br>";
+echo "we are happy to ".$abc." you";
+echo "<br>";
+echo "age is ".$t;
+echo "<br>";
+
+function pann() {
+   static $v=5;
+   echo $v;
+
+}
+
+pann();
+echo "<br>";
+pann();
+echo "<br>";
+pann();
+echo "<br>";
+
+$x = "hfgyf";
+var_dump(is_numeric($x));
+
+define("abc",["We the peoples","What is","name of"]);
+echo abc[1];
+
+$x = 5;
+echo $abc = $x >= 18 ? "egligible" : "non eg";//conditional assignment operators//te
+
+$ab = 32;
+if($ab>50){
+    echo "truu";
+
+}
+else{
+    echo "falsss";
+}
+
+$ab="30";
+switch($ab){
+    case "30";
+    echo "no is correct";
+    break;
+    case "40";
+    echo "no is incprrejdj";
+    break;
+    case "50";
+    echo "it is invalid";
+    break;
+    default :
+    echo "error";
+
+}
+
+
+$x = 0;
+do{
+    echo "truu no is $x <br>";
+    $x++;
+}while ($x<=50)
+
+for($t=0;$t<=100;$t+=10){
+
+    echo "this is the value $t<br>";
+}
+
+$abc = array("abc", "ygy", "ygyg","ygyf");
+//$col = array("red", "gree", "blue", "yellow");
+foreach($abc as $value){
+    echo "$value <br>";
+}
+
+for($t=0;$t<=20;$t++){
+    if($t==5){
+    continue;
+    }
+echo "this is the value $t<br>";
+}
+
+function sa(int $age,int $wage) {
+    $a=$age + $wage;
+    return $a;
+}
+ echo "my age is ".sa(6,8)."<br>";
+ echo "my wage ".sa(7,4)."<br>";
+ echo "vshsh".sa(4,9)."<br>";
+
+
+$cars = array("tata", "maruti", "volvo");
+ $alength = count($cars);
+
+for($x=0;$x<$alength;$x++){
+    echo $cars[$x];
+    echo  "<br>";
+}
+
+$cars = array("tata"=> "43", "maruti"=> "55", "volvo"=>"78");
+ foreach ($cars as $x => $xvalue){
+    echo "the price of ".$x ."is =".$xvalue ;
+    echo "<br>";
+ }
+
+$cars = array(array("maruti",22,18),array("volvo",25,16),array("tata",28,19));
+
+echo "car ".$cars[0][0]."of value".$cars[0][1]."is ".$cars[0][2]."<br>";
+echo "car ".$cars[1][0]."of value".$cars[1][1]."is ".$cars[1][2]."<br>";
+echo "car ".$cars[2][0]."of value".$cars[2][1]."is ".$cars[2][2]."<br>";
+
+echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_ADDR'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+echo "<br>";
+*/
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
